@@ -1,0 +1,50 @@
+<annotation>
+	<folder>1</folder>
+	<filename>[1069, 318, 9732, 6963]_0.jpg</filename>
+	<path>F:\earn\PaddleOCR-main\PaddleOCR-main\output\1\[1069, 318, 9732, 6963]_0.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>8663</width>
+		<height>6645</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>table</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>6221</xmin>
+			<ymin>2872</ymin>
+			<xmax>8428</xmax>
+			<ymax>3436</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>table</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>6228</xmin>
+			<ymin>3536</ymin>
+			<xmax>8421</xmax>
+			<ymax>4429</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>cad</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>428</xmin>
+			<ymin>793</ymin>
+			<xmax>6042</xmax>
+			<ymax>4522</ymax>
+		</bndbox>
+	</object>
+</annotation>
