@@ -142,16 +142,16 @@ class ComponentRecognitionApp:
             self.result_text.delete(1.0, tk.END)
             self.result_text.insert(tk.END, f"save result in {save_folder}\n")
             self.result_text.insert(tk.END, str(result))
-            self.excel_table_button.config(state=tk.NORMAL)  # 启用处理 Excel 按钮
+            self.excel_table_button.config(state=tk.NORMAL)
 
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred while extracting the table.: {e}")
-            self.excel_table_button.config(state=tk.DISABLED)  # 如果提取失败，禁用处理 Excel 按钮
+            self.excel_table_button.config(state=tk.DISABLED)
 
     def _process_excel(self):
         if os.path.exists("process_excel"):
-            shutil.rmtree(r"E:\FinalRepo\process_excel")
-        os.makedirs(r"E:\FinalRepo\process_excel")
+            shutil.rmtree(r"D:\integrated_ui\process_excel")
+        os.makedirs(r"D:\integrated_ui\process_excel")
         all_infos = []
         res = os.listdir(self.save_folder)
         for i in res:
@@ -165,7 +165,7 @@ class ComponentRecognitionApp:
                     print(f"Processing document: {file_path}")
 
                     news = process_excel(file_path,
-                                         os.path.join(r"E:\FinalRepo\process_excel", r))
+                                         os.path.join(r"D:\integrated_ui\process_excel", r))
                     all_infos.append(news)
                 except Exception as e:
                     messagebox.showerror("Error", f"File: {i} An error occurred while processing the document: {e}")
@@ -179,7 +179,7 @@ class ComponentRecognitionApp:
 
         try:
             args = {
-                "weights": r"E:\FinalRepo\ultralyticsmain\runs\res\weights\best.pt",
+                "weights": r"D:\integrated_ui\ultralyticsmain\runs\res\weights\best.pt",
                 "source": self.image_path,
                 "view_img": False,
                 'save_img': False,

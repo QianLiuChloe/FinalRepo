@@ -13,8 +13,8 @@ import os
 
 class YOLO(object):
     _defaults = {
-        "model_path"        : r'E:\FinalRepo\yolov8_crop\logs\best_epoch_weights.pth',
-        "classes_path"      : r'E:\FinalRepo\yolov8_crop\model_data\coco_classes.txt',
+        "model_path"        : r'D:\integrated_ui\yolov8_crop\logs\best_epoch_weights.pth',
+        "classes_path"      : r'D:\integrated_ui\yolov8_crop\model_data\coco_classes.txt',
 
         "input_shape"       : [640, 640],
 
