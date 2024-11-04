@@ -106,7 +106,7 @@ select_pdf_button = ttk.Button(root, text="Select PDF file", command=select_pdf_
 select_pdf_button.grid(row=0, column=2, padx=10, pady=10)
 convert_to_jpg_button = ttk.Button(root, text="Convert single-page PDF to JPG", command=convert_to_jpg)
 convert_to_jpg_button.grid(row=2, column=0, columnspan=3, padx=10, pady=10)
-# 输出路径输入框
+
 output_dir_label = ttk.Label(root, text="Output Path:")
 output_dir_label.grid(row=1, column=0, padx=10, pady=10, sticky="e")
 

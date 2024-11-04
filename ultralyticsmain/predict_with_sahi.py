@@ -7,7 +7,6 @@ import cv2
 import pandas as pd
 from sahi import AutoDetectionModel
 from sahi.predict import get_sliced_prediction
-from sahi.utils.yolov8 import download_yolov8s_model
 
 from ultralyticsmain.ultralytics.utils.files import increment_path
 from ultralyticsmain.ultralytics.utils.plotting import Annotator, colors

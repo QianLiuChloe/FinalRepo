@@ -12,18 +12,18 @@ data = {
 df = pd.DataFrame(data)
 
 
-print("DataFrame 列名:")
+print("DataFrame column name:")
 print(df.columns)
 
 
 matching_columns = [col for col in df.columns if 'SIZE' in col.upper()]
 
 
-print("匹配的列名列表:")
+print("List of matching column names:")
 print(matching_columns)
 
 if matching_columns:
     size_col_name = matching_columns[0]
-    print(f"列名包含 'SIZE' 的列是: {size_col_name}")
+    print(f"The columns containing ‘SIZE’ are: {size_col_name}")
 else:
-    print("没有找到包含 'SIZE' 的列名。")
+    print("No column name containing ‘SIZE’ was found.")

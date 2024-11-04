@@ -128,7 +128,7 @@ class ComponentRecognitionApp:
         try:
             save_folder = self.save_folder
             img_path = filedialog.askopenfilename(
-                initialdir=os.path.join(os.getcwd(), "img_crop"),  # 初始目录为当前工作目录
+                initialdir=os.path.join(os.getcwd(), "img_crop"),
                 title="Choose Table",
                 filetypes=(("PNG files", "*.png"), ("All files", "*.*"))
             )
@@ -150,8 +150,8 @@ class ComponentRecognitionApp:
 
     def _process_excel(self):
         if os.path.exists("process_excel"):
-            shutil.rmtree(r"D:\integrated_ui\process_excel")
-        os.makedirs(r"D:\integrated_ui\process_excel")
+            shutil.rmtree(r"E:\FinalRepo\process_excel")
+        os.makedirs(r"E:\FinalRepo\process_excel")
         all_infos = []
         res = os.listdir(self.save_folder)
         for i in res:
@@ -165,7 +165,7 @@ class ComponentRecognitionApp:
                     print(f"Processing document: {file_path}")
 
                     news = process_excel(file_path,
-                                         os.path.join(r"D:\integrated_ui\process_excel", r))
+                                         os.path.join(r"E:\FinalRepo\process_excel", r))
                     all_infos.append(news)
                 except Exception as e:
                     messagebox.showerror("Error", f"File: {i} An error occurred while processing the document: {e}")
@@ -173,13 +173,13 @@ class ComponentRecognitionApp:
 
         self.result_text.delete(1.0, tk.END)
         self.result_text.insert(tk.END, f"{all_infos}")
-        self.sahi_table_button.config(state=tk.NORMAL)  # 启用处理 Excel 按钮
+        self.sahi_table_button.config(state=tk.NORMAL)
 
     def sahi_infer(self):
 
         try:
             args = {
-                "weights": r"D:\integrated_ui\ultralyticsmain\runs\res\weights\best.pt",
+                "weights": r"E:\FinalRepo\ultralyticsmain\runs\res\weights\best.pt",
                 "source": self.image_path,
                 "view_img": False,
                 'save_img': False,
@@ -194,9 +194,9 @@ class ComponentRecognitionApp:
     def combine(self):
 
 
-        df1 = pd.read_excel(os.path.join(r'.\process_excel', os.listdir(r'.\process_excel')[0]))  # 表格一
+        df1 = pd.read_excel(os.path.join(r'.\process_excel', os.listdir(r'.\process_excel')[0]))  # Table 1
         df2 = pd.read_excel(
-            os.path.join(r'.\ultralytics_results_with_sahi', os.listdir(r'.\ultralytics_results_with_sahi')[0]))  # 表格一
+            os.path.join(r'.\ultralytics_results_with_sahi', os.listdir(r'.\ultralytics_results_with_sahi')[0]))  # Table2
 
 
         df2.iloc[:, 0] = df2.iloc[:, 0].str.upper()
